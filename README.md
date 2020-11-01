@@ -18,6 +18,9 @@ morgan
 # 크로스 도메인
 cors
 
+# 기타
+bcrypt
+
 # 개발용
 nodemon
 
