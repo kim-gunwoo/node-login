@@ -1,9 +1,18 @@
 ## 기본 로그인 구현
 
 ```bash
+#passport 로그인 구현
+// Content-Type: application/json
+// 테스트 계정
+{ "email" : "test@test", "passwd" : "test" }
+# 로그인 POST
+localhost:PORT/user/signin
 
+# 회원가입 POST
+localhost:PORT/user/signup
 
-
+# 로그아웃 GET
+localhost:PORT/user/logout
 ```
 
 ## 셋업
@@ -19,7 +28,7 @@ morgan
 cors
 
 # 기타
-bcrypt
+express-session compression passport passport-local
 
 # 개발용
 nodemon
@@ -45,5 +54,5 @@ npm run dev
 https://expressjs.com/ko/4x/api.html
 
 # passport
-
+http://www.passportjs.org/
 ```
