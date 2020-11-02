@@ -40,11 +40,26 @@ const passport = require("passport");
 app.use(passport.initialize());
 app.use(passport.session());
 
+/**
+로그인 여부 확인 
+ */
+const authenticateUser = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    next();
+  } else {
+    res.json({ auth: "login first" });
+  }
+};
+
 /*
 서버 확인
  */
 app.get("/", (req, res) => {
   res.json({ run: "Run Server" });
+});
+
+app.get("/auth", authenticateUser, (req, res) => {
+  res.json({ auth: "success" });
 });
 
 /* 
